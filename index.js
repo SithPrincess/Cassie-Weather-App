@@ -4,9 +4,9 @@ function search(event) {
   let cityBox = document.querySelector("#current-city");
   searchCity(searchInputElement.value);
 }
-
-function searchCity(city) {}
-
+function searchCity(city) {
+  searchCity(searchInputElement.value);
+}
 function getWeather(response) {
   let temperature = Math.round(response.data.temperature.current);
   let temperatureElement = document.querySelector(".current-temperature-value");
@@ -45,7 +45,7 @@ function formatDate(date) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
 
-let currentDateElement = document.querySelector("#current-date");
+let currentDateELement = document.querySelector("#current-date");
 let currentDate = new Date();
 
 currentDateELement.innerHTML = formatDate(currentDate);
